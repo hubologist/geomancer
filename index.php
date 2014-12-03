@@ -49,7 +49,15 @@ contact: hi@lightradius.com
             </div>
         </nav>
         <div class="container">
-            <?php include 'php/capitals.php'; ?>          
+            <?php include 'php/capitals.php'; ?>
+            <div class="row">
+                <div class="col-sm-6">2</div>
+                <div class="col-sm-6">3</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">4</div>
+                <div class="col-sm-6">5</div>
+            </div>  
         </div>
         <footer class="footer">
             <ul class="nav navbar-nav">
