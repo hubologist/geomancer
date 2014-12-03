@@ -1,5 +1,6 @@
 <?php
-/* 
+
+/*
  * created by: Tiago @ http://lightradius.com
  * contact: hi@lightradius.com
  */
@@ -7,11 +8,14 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
+$dbname = "geomancer";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$db = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
 }
+
+echo "Connection succesful.";

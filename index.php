@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <!--
 created by: Tiago @ http://lightradius.com
 contact: hi@lightradius.com
 -->
 
-<?php include 'inc/connect.php'; ?>
+<?php include 'inc/game.php'; ?>
 
 <html>
     <head>
@@ -14,7 +15,7 @@ contact: hi@lightradius.com
     <body>
         <h1>Geomancer</h1>
         <?php
-            echo "fuck yeah  yeah bitchesfuck yeah bitches";
+        echo "fuck yeah  yeah bitchesfuck yeah bitches";
         ?>
     </body>
 </html>
