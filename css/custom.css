@@ -1,0 +1,14 @@
+/*
+created by: Tiago @ http://lightradius.com
+contact: hi@lightradius.com
+*/
+
+@font-face {
+    font-family: pixelate;
+    src: url('../fonts/pixelate.ttf'),
+        url('../fonts/pixelate.eot'); /* IE9 */
+}
+
+body {
+    font-family: "pixelate", serif;
+}

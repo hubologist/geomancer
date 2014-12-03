@@ -7,13 +7,13 @@
 
 require_once 'connect.php';
 
-$sql = "SELECT name FROM countries";
+$sql = "SELECT name, capital FROM countries";
 $result = $db->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo $row["name"] . "<br />";
+        echo $row["name"] . " - " . $row["capital"] . "<br />";
     }
 } else {
     echo "No results!";
