@@ -49,9 +49,7 @@ contact: hi@lightradius.com
             </div>
         </nav>
         <div class="container">
-            <div class="jumbotron">
-                <?php include 'php/capitals.php'; ?> 
-            </div>              
+            <?php include 'php/capitals.php'; ?>          
         </div>
         <footer class="footer">
             <ul class="nav navbar-nav">

@@ -24,10 +24,16 @@ body {
 
 .jumbotron {
     color: rgb(255,255,255);
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,255,255,0.3);
+}
+
+.jumbotron p{
+    margin: 10px 0;
+    text-shadow: 1px 1px 0px black;
 }
 
 .panel img {
     width: 100px;
     box-shadow: 5px 5px 0px rgb(0,0,0);
 }
+

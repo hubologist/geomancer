@@ -20,7 +20,7 @@ $sql = "SELECT name FROM countries WHERE id = " . $random_ids[0];
 $result = $db->query($sql);
 $row = $result->fetch_assoc();
 
-echo "<p>What is the capital of " . $row["name"] . "?</p>";
+echo "<div class='jumbotron'><p>What is the capital of " . $row["name"] . "?</p></div>";
 
 foreach ($random_ids as $id) {
     $sql = "SELECT id, iso, name, capital FROM countries WHERE id = " . $id;
@@ -30,7 +30,7 @@ foreach ($random_ids as $id) {
 
         // output data of each row
         while ($row = $result->fetch_assoc()) {
-            echo "<p id='" . $row["id"] . "'>" . $i . ". " . $row["capital"] . ".</p>";
+            echo "<p id='" . $row["id"] . "'>" . $i . ". " . $row["capital"] . "</p>";
         }
     } else {
         echo "No results!";
