@@ -25,9 +25,10 @@ body {
 .panel {
     background: rgba(255,255,255,0.3);
     padding: 10px;
+    text-align: center;
 }
 
 .panel img {
-    height: 100px;
+    width: 100px;
     box-shadow: 5px 5px 0px rgb(0,0,0);
 }

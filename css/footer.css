@@ -21,3 +21,7 @@ body {
     /* Set the fixed height of the footer here */
     height: 60px;
 }
+
+.footer ul {
+    margin: 0 auto;
+}

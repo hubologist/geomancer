@@ -6,9 +6,12 @@
  */
 
 require_once 'connect.php';
+$rand = mt_rand (0, 251);
 
-$sql = "SELECT iso, name, capital FROM countries WHERE  id = 56";
+$sql = "SELECT iso, name, capital FROM countries WHERE id = " . $rand;
 $result = $db->query($sql);
+
+
 
 if ($result->num_rows > 0) {
     // output data of each row

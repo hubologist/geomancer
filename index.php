@@ -51,15 +51,16 @@ contact: hi@lightradius.com
         <div class="container">
             <h1>Geomancer</h1>
             <div class="panel">
-                <?php include 'php/game.php'; ?>
+                <div class="col-sm-3"><?php include 'php/game.php'; ?></div>  
+                <div class="col-sm-3"><?php include 'php/game.php'; ?></div>  
+                <div class="col-sm-3"><?php include 'php/game.php'; ?></div>  
+                <div class="col-sm-3"><?php include 'php/game.php'; ?></div>  
             </div>              
         </div>
         <footer class="footer">
-            <div class="container">
-                <ul class="nav navbar-nav">
-                    <li><a class="" href="http://lightradius.com">&#169; lightradius 2014</a></li>
-                </ul>
-            </div>
+            <ul class="nav navbar-nav">
+                <li><a class="" href="http://lightradius.com">&#169; lightradius 2014</a></li>
+            </ul>
         </footer>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
