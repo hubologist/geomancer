@@ -5,10 +5,14 @@ contact: hi@lightradius.com
 
 @font-face {
     font-family: pixelate;
-    src: url('../fonts/pixelate.ttf'),
-        url('../fonts/pixelate.eot'); /* IE9 */
+    src: url('../fonts/pixelate.ttf'), url('../fonts/pixelate.eot'); /* IE9 */
 }
 
+* {
+    border-radius: 0 !important;
+}
+/*
 body {
     font-family: "pixelate", serif;
 }
+*/

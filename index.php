@@ -5,7 +5,7 @@ created by: Tiago @ http://lightradius.com
 contact: hi@lightradius.com
 -->
 
-<?php include 'inc/game.php'; ?>
+<?php ?>
 
 <html lang="en">
     <head>
@@ -15,7 +15,7 @@ contact: hi@lightradius.com
         <title>Geomancer</title>
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        
+
         <!-- css -->
         <link href="css/custom.css" rel="stylesheet">
 
@@ -26,15 +26,27 @@ contact: hi@lightradius.com
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-</head>
-<body>
-    <h1>Geomancer</h1>
-    <?php
-    echo "fuck yeah  yeah bitchesfuck yeah bitches";
-    ?>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-</body>
+    <body>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header"></div>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Geomancer</a>
+            </div>
+        </nav>
+        <h1>Geomancer</h1>
+        <?php
+        include 'inc/game.php';
+        ?>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+    </body>
 </html>
