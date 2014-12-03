@@ -49,12 +49,8 @@ contact: hi@lightradius.com
             </div>
         </nav>
         <div class="container">
-            <h1>Geomancer</h1>
-            <div class="panel">
-                <div class="col-sm-3"><?php include 'php/game.php'; ?></div>  
-                <div class="col-sm-3"><?php include 'php/game.php'; ?></div>  
-                <div class="col-sm-3"><?php include 'php/game.php'; ?></div>  
-                <div class="col-sm-3"><?php include 'php/game.php'; ?></div>  
+            <div class="jumbotron">
+                <?php include 'php/capitals.php'; ?> 
             </div>              
         </div>
         <footer class="footer">

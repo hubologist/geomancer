@@ -22,10 +22,9 @@ body {
     background: url(../img/pattern.png) repeat;
 }
 
-.panel {
-    background: rgba(255,255,255,0.3);
-    padding: 10px;
-    text-align: center;
+.jumbotron {
+    color: rgb(255,255,255);
+    background: rgba(0,0,0,0.3);
 }
 
 .panel img {
