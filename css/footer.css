@@ -1,0 +1,23 @@
+/*
+created by: Tiago @ http://lightradius.com
+contact: hi@lightradius.com
+*/
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+.footer {
+    background-color: rgb(62,63,58);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+}

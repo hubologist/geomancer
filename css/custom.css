@@ -13,6 +13,21 @@ contact: hi@lightradius.com
 }
 
 body {
-    background: rgb(128,128,128);
-    text-shadow: -1px -1px 0px black;
+    background: url(../img/map.jpg) no-repeat center center fixed;
+    background-size: cover;
+    /* http://fc09.deviantart.net/fs12/i/2006/277/a/f/Worldmap_by_PhysicalMagic.jpg */
+}
+
+.flag {
+    background: url(../img/pattern.png) repeat;
+}
+
+.panel {
+    background: rgba(255,255,255,0.3);
+    padding: 10px;
+}
+
+.panel img {
+    height: 100px;
+    box-shadow: 5px 5px 0px rgb(0,0,0);
 }

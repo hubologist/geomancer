@@ -7,13 +7,13 @@
 
 require_once 'connect.php';
 
-$sql = "SELECT name, capital FROM countries";
+$sql = "SELECT iso, name, capital FROM countries WHERE  id = 56";
 $result = $db->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo $row["name"] . " - " . $row["capital"] . "<br />";
+        echo "<img src='flags/" . $row["iso"] . ".png' alt='" . $row["name"] . "'/>";
     }
 } else {
     echo "No results!";
