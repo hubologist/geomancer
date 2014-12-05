@@ -1,6 +1,6 @@
 <?php
 
-/* 
+/*
  * created by: Tiago @ http://lightradius.com
  * contact: hi@lightradius.com
  */
@@ -21,27 +21,27 @@ function randomRange($min, $max, $quantity) {
     return array_slice($numbers, 0, $quantity);
 }
 
-$selected = randomRange(0, 251, $difficulty); 
+$selected = randomRange(0, 251, $difficulty);
 
 //First, $difficulty countries and their respective data
 //will be pulled at random from the database.
 
-foreach ($selected as $id) {
-    $sql = "SELECT name, capital, area, pop, continent, neighbours FROM countries WHERE id = " . $id;
-    $result = $db->query($sql);
-    $row[$id] = $result->fetch_assoc();
-}
-
-foreach ($row as $country) {
-    foreach ($country as $data) {
-        echo $data . "<br />";
+function getCountries($db, $selected) {
+    foreach ($selected as $id) {
+        $sql = "SELECT name, capital, area, pop, continent, neighbours FROM countries WHERE id = " . $id;
+        $result = $db->query($sql);
+        //For each randomly selected id, we will select the corresponding row and store it in a multidimensional array
+        $row[$id] = $result->fetch_assoc();
     }
+    return $row;
 }
 
-//This function simply selects one question structure at random
+print_r(getCountries($db, $selected));
+
+//We will then select one of 5 possible types of question at random
 function getQuestion() {
-    $rand = mt_rand(0, 3);
-    
+    $rand = mt_rand(0, 4);
+
     switch ($rand) {
         case 0:
             $question = "What is the capital of ";
@@ -49,13 +49,13 @@ function getQuestion() {
         case 1:
             $question = "Which of the following flags belongs to ";
             break;
-        case 1:
+        case 2:
             $question = "To which country does this flag belong to?";
             break;
-        case 2:
+        case 3:
             $question = "Which of these has the largest area?";
             break;
-        case 3:
+        case 4:
             $question = "Which of these has the largest population?";
             break;
     }
