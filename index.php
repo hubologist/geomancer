@@ -49,9 +49,9 @@ contact: hi@lightradius.com
             </div>
         </nav>
         <div class="container">
-            <?php include 'php/capitals.php'; ?>
+            <?php include 'php/question.php'; ?>
             <div class="row">
-                <div class="col-sm-6">2</div>
+                <div class="btn btn-default btn-lg">Ok then</div>
                 <div class="col-sm-6">3</div>
             </div>
             <div class="row">
