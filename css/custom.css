@@ -24,6 +24,8 @@ body {
 
 .jumbotron {
     color: rgb(255,255,255);
+    text-align: center;
+    padding: 0 !important;
 }
 
 .col-sm-6 {
@@ -44,5 +46,10 @@ body {
 .panel img {
     width: 100px;
     box-shadow: 5px 5px 0px rgb(0,0,0);
+}
+
+.jumbotron img {
+    height: 100%;
+    margin: 0;
 }
 

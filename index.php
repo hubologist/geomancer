@@ -49,7 +49,7 @@ contact: hi@lightradius.com
             </div>
         </nav>
         <div class="container">
-            <?php include 'php/question.php'; ?>
+                <?php include 'php/game.php'; ?>
             <div class="row">
                 <div class="btn btn-default btn-lg">Ok then</div>
                 <div class="col-sm-6">3</div>
