@@ -17,12 +17,9 @@ function getRange($min, $max, $quantity) {
 
 $id = getRange(0, 251, $difficulty);
 
-print_r($country[$id[0]]);
+$bg = 'background-image:url("./flags/' . $country[$id[0]]["iso"] . '.png");';
 
-
-$bg = addslashes("background:url('./flags/" . $country[$id[0]]["iso"] . ".png')no-repeat center center fixed;");
-
-echo "<div class='flag' style='" . $bg . "'>sdf</div>";
+echo "<div class='flag' style='" . $bg . "'></div>";
 
 
 
