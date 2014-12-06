@@ -49,15 +49,7 @@ contact: hi@lightradius.com
             </div>
         </nav>
         <div class="container">
-                <?php include 'php/game.php'; ?>
-            <div class="row">
-                <div class="btn btn-default btn-lg">Ok then</div>
-                <div class="col-sm-6">3</div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">4</div>
-                <div class="col-sm-6">5</div>
-            </div>  
+            <?php include 'php/game.php'; ?>
         </div>
         <footer class="footer">
             <ul class="nav navbar-nav">
