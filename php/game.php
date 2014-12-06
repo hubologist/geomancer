@@ -20,6 +20,9 @@ $id = getRange(0, 251, $difficulty);
 print_r($country[$id[0]]);
 
 
+$bg = addslashes("background:url('./flags/" . $country[$id[0]]["iso"] . ".png')no-repeat center center fixed;");
+
+echo "<div class='flag' style='" . $bg . "'>sdf</div>";
 
 
 

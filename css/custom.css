@@ -53,3 +53,10 @@ body {
     margin: 0;
 }
 
+.flag {
+    height: 200px;
+    width: 300px;
+    margin: 0 auto;
+    background-size: cover;
+}
+
