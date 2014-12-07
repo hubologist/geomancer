@@ -47,7 +47,7 @@ $db->close();
 shuffle($countries);
 
 //total number of countries. PROTIP: 252
-$total = range(0, 251);
+$total = range(1, 252);
 
 //simple incremental variable to measure game progress
 $i = 0;
@@ -59,7 +59,7 @@ function getAnswers($min, $max, $quantity) {
     return array_slice($numbers, 0, $quantity);
 }
 
-$options = getAnswers(0, 251, $difficulty); 
+$options = getAnswers(1, 252, $difficulty); 
 
 //this will fill an array with all available flag images in our image folder
 function getFlags() {
@@ -76,11 +76,14 @@ function getFlags() {
 $flags = getFlags();
 
 
-$src = './flag/' . $countries[0]["iso"] . '.png';
+$src = './flag/' . $countries[$options[mt_rand(0, $difficulty-1)]]["iso"] . '.png';
 $bg = 'background-image:url("' . $src . '");';
 
 echo "<div class='flag' style='" . $bg . "'></div>";
-echo "<p>" . $countries[$i]["name"] . "</p>";
+
+foreach ($options as $id) {
+    echo "<p>" . $countries[$id]["name"] . "</p>";
+}
 
 /*
  * 4.0 main loop
