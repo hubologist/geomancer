@@ -40,7 +40,7 @@ if ($result->num_rows > 0) {
 $db->close();
 
 /*
- * 3.0 main loop
+ * 3.0 globals and helper functions
  */
 
 //randomizeing our list of countries
@@ -58,6 +58,7 @@ function getAnswers($min, $max, $quantity) {
     shuffle($numbers);
     return array_slice($numbers, 0, $quantity);
 }
+
 $options = getAnswers(0, 251, $difficulty); 
 
 //this will fill an array with all available flag images in our image folder
@@ -66,13 +67,13 @@ function getFlags() {
     foreach (glob('./flag/*.*') as $filename) {
         if (substr($filename, -3) === "png") {
             $flags[$i] = substr($filename, -6, 2);
+            $i++;
         }
-        echo $flags[$i];
     }
-    return $flags[];
+    return $flags;
 }
-$flags = getFlags();
 
+$flags = getFlags();
 
 
 $src = './flag/' . $countries[0]["iso"] . '.png';
@@ -80,6 +81,10 @@ $bg = 'background-image:url("' . $src . '");';
 
 echo "<div class='flag' style='" . $bg . "'></div>";
 echo "<p>" . $countries[$i]["name"] . "</p>";
+
+/*
+ * 4.0 main loop
+ */
 
 //We will then select one of 5 possible types of question at random
 function getQuestion($questionType) {
