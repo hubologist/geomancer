@@ -21,19 +21,37 @@ if ($result->num_rows > 0) {
     echo "No results!";
 }
 $db->close();
+shuffle($country); //randomized list of countries
+
+$total = range(0, 251); //total number of countries PROTIP: 252
+$i = 0; //Simple incremental variable to measure game progress
+$options = getAnswers(0, 251, $difficulty);
 
 //This function will pull out a predefined quantity of country ids at random
-function getRange($min, $max, $quantity) {
+function getAnswers($min, $max, $quantity) {
     $numbers = range($min, $max);
     shuffle($numbers);
     return array_slice($numbers, 0, $quantity);
 }
 
-$id = getRange(0, 251, $difficulty);
+function removeBrokenLinks($arr) {
+    foreach ($arr as $index) {
+        $src = './flag/' . $index["iso"] . '.png';
+        list($width, $height) = @getimagesize($src);
 
-$bg = 'background-image:url("./flag/' . $country[$id[0]]["iso"] . '.png");';
+        if ($height === NULL || $width === NULL) {
+            unset($arr[$index]);
+            $arr = array_values($arr);
+        }    
+    }
+}
+
+$country = removeBrokenLinks($country);
+
+$bg = 'background-image:url("' . $src . '");';
 
 echo "<div class='flag' style='" . $bg . "'></div>";
+echo "<p>" . $country[$i]["name"] . "</p>";
 
 
 
