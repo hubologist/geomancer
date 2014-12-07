@@ -28,6 +28,14 @@ contact: hi@lightradius.com
         <![endif]-->
     </head>
     <body>
+        <div class="progress">
+            <div class="progress-bar progress-bar-success" style="width: 35%">
+                <span class="sr-only">35% Complete (success)</span>
+            </div>
+            <div class="progress-bar progress-bar-danger" style="width: 10%">
+                <span class="sr-only">10% Complete (danger)</span>
+            </div>
+        </div>
         <nav class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -42,8 +50,22 @@ contact: hi@lightradius.com
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Difficulty <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="index.php?difficulty=easy">Easy</a></li>
+                                <li><a href="index.php?difficulty=medium">Medium</a></li>
+                                <li><a href="index.php?difficulty=hard">Hard</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">Flags</a></li>
                         <li><a href="#">Capitals</a></li>
+                        <li><a href="#">Population</a></li>
+                        <li><a href="#">Area</a></li>
+                        <li><a href="#">Random</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a>SCORE: 0</a></li>
                     </ul>
                 </div>
             </div>
