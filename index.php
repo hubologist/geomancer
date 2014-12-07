@@ -49,7 +49,9 @@ contact: hi@lightradius.com
             </div>
         </nav>
         <div class="container">
-            <?php include 'php/game.php'; ?>
+            <div class="row">
+                <?php include 'php/game.php'; ?>
+            </div>
         </div>
         <footer class="footer">
             <ul class="nav navbar-nav">
