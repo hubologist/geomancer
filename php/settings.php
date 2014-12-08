@@ -11,7 +11,7 @@
 if(isset($_POST["difficulty"])) {
     $difficulty = $_POST["difficulty"];
 } else {
-    $difficulty = 4;
+    $difficulty = 6;
 }
 
 if(isset($_POST["questionType"])) {
@@ -20,9 +20,17 @@ if(isset($_POST["questionType"])) {
     $questionType = "random";
 }
 
+
+
+//this pulls out a predefined quantity of country ids at random, to serve as our multiple choice options
+function getOptions($min, $max, $quantity) {
+    $numbers = range($min, $max);
+    shuffle($numbers);
+    return array_slice($numbers, 0, $quantity);
+}
+
 //this function simply gets the names of all available flag images in our flag folder
 //we will only pull countries for which we have flags from our database
-
 function getFlags() {
     $i = 0;
     foreach (glob("./flag/*.*") as $filename) {
@@ -34,4 +42,3 @@ function getFlags() {
     return $flags;
 }
 
-$flags = getFlags();

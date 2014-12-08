@@ -18,12 +18,13 @@
  * 1.0 includes
  */
 
-include 'connect.php';  //database connection
+require_once 'connect.php';  //database connection
 include 'settings.php'; //game settings
 
 /*
  * 2.0 SQL
  */
+$flags = getFlags();
 
 //pulling all countries for which we have flags from our database
 for ($i = 0; $i < count($flags); $i++) {
@@ -34,13 +35,11 @@ for ($i = 0; $i < count($flags); $i++) {
         $row = $result->fetch_assoc();
         $countries[$i] = $row;
     } else {
-        echo "<br />No results! ->" . $flags[$i];
+        echo "<br />No results for " . $flags[$i];
     }
 }
 
 $db->close();
-
-
 
 /*
  * 3.0 globals and helper functions
@@ -49,43 +48,33 @@ $db->close();
 //randomizing our list of countries
 shuffle($countries);
 
-
-//simple incremental variable to measure game progress
-$i = 0;
-
-//this will remove any index from the country array that does not have a corresponding flag, to avoid conflict
-function removeBrokenLinks($countries, $flags) {
-    for ($i = 0; $i < count($countries); $i++) {
-        if (!in_array($countries[$i]["iso"], $flags)) {
-            unset($countries[$i]);
-        }
-    }
-    return array_values($countries);
-}
-
 //number of selected countries
 $total = count($countries);
 
-//this pulls out a predefined quantity of country ids at random, to serve as our multiple choice options
-function getOptions($min, $max, $quantity) {
-    $numbers = range($min, $max);
-    shuffle($numbers);
-    return array_slice($numbers, 0, $quantity);
+$options = getOptions(0, $total-1, $difficulty);
+
+$correct = $options[mt_rand(0, $difficulty - 1)];
+
+
+if(isset($_GET["answer"])) {
+    echo $answer = $_GET["answer"];
+    echo $countries[$correct]["iso"];
+    if ($answer == $countries[$correct]["iso"]) {
+        echo "Yes";
+    } else {
+        echo "No";
+    }
 }
 
-$options = getOptions(0, $total, $difficulty);
+$src = './flag/' . $countries[$correct]["iso"] . '.png';
 
-
-
-$src = './flag/' . $countries[$options[mt_rand(0, $difficulty - 1)]]["iso"] . '.png';
 $bg = 'background-image:url("' . $src . '");';
 
 echo "<div class='flag' style='" . $bg . "'></div>";
 
 foreach ($options as $id) {
-    echo "<p>" . $countries[$id]["name"] . "</p>";
+    echo "<a class='btn btn-default' href='index.php?answer=" . $countries[$id]["iso"] . "'>" . $countries[$id]["name"] . "</a>";
 }
-
 /*
  * 4.0 main loop
  */
