@@ -5,6 +5,8 @@
  * contact: hi@lightradius.com
  */
 
+
+
 //The difficulty level simply determines the number of options a player will have to choose from.
 //Easy = 4 options, Medium = 6 options, Hard = 8 options. Default is easy.
 
@@ -21,10 +23,10 @@ if(isset($_POST["questionType"])) {
 }
 
 if(isset($_GET["answer"]) && isset($_GET["correct"])) {
-    echo $answer = $_GET["answer"];
-    echo $correct = $_GET["correct"];
+    $answer = $_GET["answer"];
+    $correct = $_GET["correct"];
     if ($answer === $correct) {
-        echo "Yes";
+        $score++;
     } else {
         echo "No";
     }
