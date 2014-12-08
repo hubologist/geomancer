@@ -25,19 +25,22 @@ include 'settings.php'; //game settings
  * 2.0 SQL
  */
 
-//The only query we'll ever need
-$sql = "SELECT iso, name, capital, area, pop, continent, neighbours FROM countries WHERE area IS NOT NULL AND capital IS NOT NULL";
-$result = $db->query($sql);
-
-if ($result->num_rows > 0) {
-    //Save data of each row
-    while ($row = $result->fetch_assoc()) {
-        $countries[] = $row;
+//pulling all countries for which we have flags from our database
+for ($i = 0; $i < count($flags); $i++) {
+    $sql = "SELECT iso, name, capital, area, pop, continent, neighbours FROM countries WHERE area IS NOT NULL AND capital IS NOT NULL AND iso = '" . $flags[$i] . "'";
+    $result = $db->query($sql);
+    
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $countries[$i] = $row;
+    } else {
+        echo "No results!";
     }
-} else {
-    echo "No results!";
 }
+
 $db->close();
+
+
 
 /*
  * 3.0 globals and helper functions
@@ -50,29 +53,15 @@ shuffle($countries);
 //simple incremental variable to measure game progress
 $i = 0;
 
-//this will fill an array with all available flag images in our image folder
-function getFlags() {
-    $i = 0;
-    foreach (glob('./flag/*.*') as $filename) {
-        if (substr($filename, -3) === "png") {
-            $flags[$i] = substr($filename, -6, 2);
-            $i++;
-        }
-    }
-    return $flags;
-}
-$flags = getFlags();
-
 //this will remove any index from the country array that does not have a corresponding flag, to avoid conflict
 function removeBrokenLinks($countries, $flags) {
     for ($i = 0; $i < count($countries); $i++) {
-        if(!in_array($countries[$i]["iso"], $flags)) {
+        if (!in_array($countries[$i]["iso"], $flags)) {
             unset($countries[$i]);
         }
     }
     return array_values($countries);
 }
-
 
 //number of selected countries
 $total = count($countries);
@@ -83,11 +72,12 @@ function getOptions($min, $max, $quantity) {
     shuffle($numbers);
     return array_slice($numbers, 0, $quantity);
 }
-$options = getOptions(0, $total, $difficulty); 
+
+$options = getOptions(0, $total, $difficulty);
 
 
 
-$src = './flag/' . $countries[$options[mt_rand(0, $difficulty-1)]]["iso"] . '.png';
+$src = './flag/' . $countries[$options[mt_rand(0, $difficulty - 1)]]["iso"] . '.png';
 $bg = 'background-image:url("' . $src . '");';
 
 echo "<div class='flag' style='" . $bg . "'></div>";

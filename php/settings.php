@@ -19,3 +19,19 @@ if(isset($_POST["questionType"])) {
 } else {
     $questionType = "random";
 }
+
+//this function simply gets the names of all available flag images in our flag folder
+//we will only pull countries for which we have flags from our database
+
+function getFlags() {
+    $i = 0;
+    foreach (glob("./flag/*.*") as $filename) {
+        if (substr($filename, -3) === "png") {
+            $flags[$i] = substr($filename, -6, 2);
+            $i++;
+        }
+    }
+    return $flags;
+}
+
+$flags = getFlags();
