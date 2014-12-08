@@ -26,7 +26,7 @@ if(isset($_GET["answer"]) && isset($_GET["correct"])) {
     $answer = $_GET["answer"];
     $correct = $_GET["correct"];
     if ($answer === $correct) {
-        $score++;
+        echo "Yes";
     } else {
         echo "No";
     }

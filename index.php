@@ -5,7 +5,7 @@ created by: Tiago @ http://lightradius.com
 contact: hi@lightradius.com
 -->
 
-<?php session_start(); ?>
+<?phpsession_start(); ?>
 
 <html lang="en">
     <head>
