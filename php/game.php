@@ -26,7 +26,7 @@ include 'settings.php'; //game settings
  */
 
 //The only query we'll ever need
-$sql = "SELECT iso, name, capital, area, pop, continent, neighbours FROM countries WHERE capital IS NOT NULL";
+$sql = "SELECT iso, name, capital, area, pop, continent, neighbours FROM countries WHERE area IS NOT NULL AND capital IS NOT NULL";
 $result = $db->query($sql);
 
 if ($result->num_rows > 0) {
@@ -43,23 +43,12 @@ $db->close();
  * 3.0 globals and helper functions
  */
 
-//randomizeing our list of countries
+//randomizing our list of countries
 shuffle($countries);
 
-//total number of countries. PROTIP: 252
-$total = range(1, 252);
 
 //simple incremental variable to measure game progress
 $i = 0;
-
-//this pulls out a predefined quantity of country ids at random, to serve as our multiple choice options
-function getAnswers($min, $max, $quantity) {
-    $numbers = range($min, $max);
-    shuffle($numbers);
-    return array_slice($numbers, 0, $quantity);
-}
-
-$options = getAnswers(1, 252, $difficulty); 
 
 //this will fill an array with all available flag images in our image folder
 function getFlags() {
@@ -72,8 +61,31 @@ function getFlags() {
     }
     return $flags;
 }
-
 $flags = getFlags();
+
+//this will remove any index from the country array that does not have a corresponding flag, to avoid conflict
+function removeBrokenLinks($countries, $flags) {
+    for ($i = 0; $i < count($countries); $i++) {
+        if(!in_array($countries[$i]["iso"], $flags)) {
+            unset($countries[$i]);
+        }
+    }
+    return array_values($countries);
+}
+
+
+//number of selected countries
+$total = count($countries);
+echo $total;
+
+//this pulls out a predefined quantity of country ids at random, to serve as our multiple choice options
+function getOptions($min, $max, $quantity) {
+    $numbers = range($min, $max);
+    shuffle($numbers);
+    return array_slice($numbers, 0, $quantity);
+}
+$options = getOptions(0, $total, $difficulty); 
+
 
 
 $src = './flag/' . $countries[$options[mt_rand(0, $difficulty-1)]]["iso"] . '.png';
