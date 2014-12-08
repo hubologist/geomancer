@@ -27,14 +27,14 @@ include 'settings.php'; //game settings
 
 //pulling all countries for which we have flags from our database
 for ($i = 0; $i < count($flags); $i++) {
-    $sql = "SELECT iso, name, capital, area, pop, continent, neighbours FROM countries WHERE area IS NOT NULL AND capital IS NOT NULL AND iso = '" . $flags[$i] . "'";
+    $sql = "SELECT iso, name, capital, area, pop, continent, neighbours FROM countries WHERE capital IS NOT NULL AND iso = '" . $flags[$i] . "'";
     $result = $db->query($sql);
     
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $countries[$i] = $row;
     } else {
-        echo "No results!";
+        echo "<br />No results! ->" . $flags[$i];
     }
 }
 
