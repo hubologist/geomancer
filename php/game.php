@@ -76,7 +76,6 @@ function removeBrokenLinks($countries, $flags) {
 
 //number of selected countries
 $total = count($countries);
-echo $total;
 
 //this pulls out a predefined quantity of country ids at random, to serve as our multiple choice options
 function getOptions($min, $max, $quantity) {
