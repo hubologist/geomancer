@@ -51,20 +51,10 @@ shuffle($countries);
 //number of selected countries
 $total = count($countries);
 
+
+
 $options = getOptions(0, $total-1, $difficulty);
-
 $correct = $options[mt_rand(0, $difficulty - 1)];
-
-
-if(isset($_GET["answer"])) {
-    echo $answer = $_GET["answer"];
-    echo $countries[$correct]["iso"];
-    if ($answer == $countries[$correct]["iso"]) {
-        echo "Yes";
-    } else {
-        echo "No";
-    }
-}
 
 $src = './flag/' . $countries[$correct]["iso"] . '.png';
 
@@ -73,7 +63,7 @@ $bg = 'background-image:url("' . $src . '");';
 echo "<div class='flag' style='" . $bg . "'></div>";
 
 foreach ($options as $id) {
-    echo "<a class='btn btn-default' href='index.php?answer=" . $countries[$id]["iso"] . "'>" . $countries[$id]["name"] . "</a>";
+    echo "<a class='btn btn-default' href='index.php?answer=" . $countries[$id]["iso"] . "&correct=" . $countries[$correct]["iso"] . "'>" . $countries[$id]["name"] . "</a>";
 }
 /*
  * 4.0 main loop

@@ -20,7 +20,15 @@ if(isset($_POST["questionType"])) {
     $questionType = "random";
 }
 
-
+if(isset($_GET["answer"]) && isset($_GET["correct"])) {
+    echo $answer = $_GET["answer"];
+    echo $correct = $_GET["correct"];
+    if ($answer === $correct) {
+        echo "Yes";
+    } else {
+        echo "No";
+    }
+}
 
 //this pulls out a predefined quantity of country ids at random, to serve as our multiple choice options
 function getOptions($min, $max, $quantity) {
