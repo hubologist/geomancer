@@ -6,6 +6,7 @@
  */
 
 $score = 3;
+$difficulty = 4;
 
 //The difficulty level simply determines the number of options a player will have to choose from.
 //Easy = 4 options, Medium = 6 options, Hard = 8 options. Default is easy.
