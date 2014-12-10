@@ -5,30 +5,39 @@
  * contact: hi@lightradius.com
  */
 
-
+$score = 3;
 
 //The difficulty level simply determines the number of options a player will have to choose from.
 //Easy = 4 options, Medium = 6 options, Hard = 8 options. Default is easy.
 
-if(isset($_POST["difficulty"])) {
-    $difficulty = $_POST["difficulty"];
-} else {
-    $difficulty = 6;
+if(isset($_GET["difficulty"])) {
+    $setting = $_GET["difficulty"];
+    switch ($setting) {
+        case "easy":
+            $difficulty = 4;
+            break;
+        case "medium":
+            $difficulty = 6;
+            break;
+        case "hard":
+            $difficulty = 8;
+            break;
+    }
 }
 
-if(isset($_POST["questionType"])) {
-    $questionType = $_POST["questionType"];
-} else {
-    $questionType = "random";
+if(isset($_GET["reset"])) {
+    $reset = $_GET["reset"];
+    if ($reset === "true") {
+        session_destroy();
+        session_start();
+    }
 }
 
-if(isset($_GET["answer"]) && isset($_GET["correct"])) {
-    $answer = $_GET["answer"];
-    $correct = $_GET["correct"];
+if(isset($_POST["submit"])) {
+    $answer = $_POST["submit"];
+    $correct = $_SESSION["correct"];
     if ($answer === $correct) {
-        echo "Yes";
-    } else {
-        echo "No";
+        $_SESSION["score"] += $score;
     }
 }
 
@@ -51,4 +60,3 @@ function getFlags() {
     }
     return $flags;
 }
-

@@ -5,20 +5,31 @@ created by: Tiago @ http://lightradius.com
 contact: hi@lightradius.com
 -->
 
-<?phpsession_start(); ?>
+<?php
+session_start();
+require_once 'php/connect.php';  //database connection
+include 'php/settings.php'; //game settings
+?>
 
 <html lang="en">
     <head>
+        <!-- meta tags -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content="lightradius.com">
+        <meta name="description" content="Flag quiz game">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="Free, Game, Geography, Flags, Multiple-choice">
+        
+        <!-- title -->
         <title>Geomancer</title>
-        <!-- Bootstrap -->
+        
+        <!-- bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/footer.css" rel="stylesheet">
 
-        <!-- css -->
+        <!-- custom css -->
         <link href="css/custom.css" rel="stylesheet">
+        <link href="css/footer.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,14 +39,6 @@ contact: hi@lightradius.com
         <![endif]-->
     </head>
     <body>
-        <div class="progress">
-            <div class="progress-bar progress-bar-success" style="width: 35%">
-                <span class="sr-only">35% Complete (success)</span>
-            </div>
-            <div class="progress-bar progress-bar-danger" style="width: 10%">
-                <span class="sr-only">10% Complete (danger)</span>
-            </div>
-        </div>
         <nav class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -58,14 +61,10 @@ contact: hi@lightradius.com
                                 <li><a href="index.php?difficulty=hard">Hard</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Flags</a></li>
-                        <li><a href="#">Capitals</a></li>
-                        <li><a href="#">Population</a></li>
-                        <li><a href="#">Area</a></li>
-                        <li><a href="#">Random</a></li>
+                        <li><a href="index.php?reset=true">Reset Score</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a>SCORE: 0</a></li>
+                        <li><a>SCORE: <span id="score"><?php echo $_SESSION["score"]; ?></span></a></li>
                     </ul>
                 </div>
             </div>
@@ -76,8 +75,8 @@ contact: hi@lightradius.com
             </div>
         </div>
         <footer class="footer">
-            <ul class="nav navbar-nav">
-                <li><a class="" href="http://lightradius.com">&#169; lightradius 2014</a></li>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a  href="http://lightradius.com">&#169; lightradius 2014</a></li>
             </ul>
         </footer>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

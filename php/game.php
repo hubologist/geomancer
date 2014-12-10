@@ -15,13 +15,6 @@
  */
 
 /*
- * 1.0 includes
- */
-
-require_once 'connect.php';  //database connection
-include 'settings.php'; //game settings
-
-/*
  * 2.0 SQL
  */
 $flags = getFlags();
@@ -55,40 +48,17 @@ $total = count($countries);
 
 $options = getOptions(0, $total-1, $difficulty);
 $correct = $options[mt_rand(0, $difficulty - 1)];
-
 $src = './flag/' . $countries[$correct]["iso"] . '.png';
-
 $bg = 'background-image:url("' . $src . '");';
+$_SESSION["correct"] = $countries[$correct]['name'];
+
 
 echo "<div class='flag' style='" . $bg . "'></div>";
 
+echo "<form action='index.php' method='post'>";
+
 foreach ($options as $id) {
-    echo "<a class='btn btn-default' href='index.php?answer=" . $countries[$id]["iso"] . "&correct=" . $countries[$correct]["iso"] . "'>" . $countries[$id]["name"] . "</a>";
+    echo "<input class='btn btn-default' type='submit' name='submit' value='" . $countries[$id]['name'] . "'/>";
 }
-/*
- * 4.0 main loop
- */
 
-//We will then select one of 5 possible types of question at random
-function getQuestion($questionType) {
-    $rand = mt_rand(0, 4);
-
-    switch ($rand) {
-        case 0: //Best solution is to call a different function on each case
-            $question = "What is the capital of ";
-            break;
-        case 1:
-            $question = "Which of the following flags belongs to ";
-            break;
-        case 2:
-            $question = "To which country does this flag belong to?";
-            break;
-        case 3:
-            $question = "Which of these has the largest area?";
-            break;
-        case 4:
-            $question = "Which of these has the largest population?";
-            break;
-    }
-    return $question;
-}
+echo "</form>";

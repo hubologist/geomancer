@@ -3,15 +3,6 @@ created by: Tiago @ http://lightradius.com
 contact: hi@lightradius.com
 */
 
-@font-face {
-    font-family: pixelate;
-    src: url('../fonts/pixelate.ttf'), url('../fonts/pixelate.eot'); /* IE9 */
-}
-
-* {
-    border-radius: 0 !important;
-}
-
 body {
     background: url(../img/map.jpg) no-repeat center center fixed;
     background-size: cover;
@@ -49,10 +40,13 @@ body {
     height: 200px;
     max-width: 300px;
     max-height: 200px;
-    margin: 0 auto;
+    margin: 15px auto;
 }
 
 .progress {
     margin: 0;
 }
 
+#score {
+    color: yellow;
+}
