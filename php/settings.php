@@ -17,6 +17,10 @@ if(!isset($_SESSION["increment"])) {
     $_SESSION["increment"] = 3; 
 }
 
+if(!isset($_SESSION["score"])) {
+    $_SESSION["score"] = 0; 
+}
+
 if(isset($_GET["difficulty"])) {
     $setting = $_GET["difficulty"];
     switch ($setting) {
