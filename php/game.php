@@ -56,9 +56,16 @@ $_SESSION["correct"] = $countries[$correct]['name'];
 echo "<div class='flag' style='" . $bg . "'></div>";
 
 echo "<form action='index.php' method='post'>";
-
+$i = 0;
 foreach ($options as $id) {
-    echo "<input class='btn btn-default' type='submit' name='submit' value='" . $countries[$id]['name'] . "'/>";
+    if ($i % 2 !== 0) {
+        echo "<div class='row'>";
+    }
+    echo "<div class='col-xs-6'><input class='btn btn-default' type='submit' name='submit' value='" . $countries[$id]['name'] . "'/></div>";
+    if ($i % 2 !== 0) {
+        echo "</div>";
+    }
+    $i++;
 }
 
 echo "</form>";

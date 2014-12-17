@@ -62,6 +62,7 @@ include 'php/settings.php'; //game settings
                             </ul>
                         </li>
                         <li><a href="index.php?reset=true">Reset Score</a></li>
+                        <li><a href="http://lightradius.com">lightradius 2014</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a>SCORE: <span id="score"><?php echo $_SESSION["score"]; ?></span></a></li>
@@ -74,11 +75,6 @@ include 'php/settings.php'; //game settings
                 <?php include 'php/game.php'; ?>
             </div>
         </div>
-        <footer class="footer">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a  href="http://lightradius.com">&#169; lightradius 2014</a></li>
-            </ul>
-        </footer>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->

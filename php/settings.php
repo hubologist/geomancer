@@ -14,7 +14,7 @@ if(!isset($_SESSION["difficulty"])) {
 }
 
 if(!isset($_SESSION["increment"])) {
-    $_SESSION["increment"] = 3; 
+    $_SESSION["increment"] = 7; 
 }
 
 if(!isset($_SESSION["score"])) {
@@ -26,15 +26,15 @@ if(isset($_GET["difficulty"])) {
     switch ($setting) {
         case "easy":
             $_SESSION["difficulty"] = 4;
-            $_SESSION["increment"] = 3;
+            $_SESSION["increment"] = 7;
             break;
         case "medium":
             $_SESSION["difficulty"] = 6;
-            $_SESSION["increment"] = 4;
+            $_SESSION["increment"] = 12;
             break;
         case "hard":
             $_SESSION["difficulty"] = 8;
-            $_SESSION["increment"] = 5;
+            $_SESSION["increment"] = 17;
             break;
     }
 }
