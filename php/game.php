@@ -48,7 +48,7 @@ $total = count($countries);
 
 $options = getOptions(0, $total-1, $difficulty);
 $correct = $options[mt_rand(0, $difficulty - 1)];
-$src = './flag/' . $countries[$correct]["iso"] . '.png';
+$src = './flag/' . strtolower($countries[$correct]["iso"]) . '.png';
 $bg = 'background-image:url("' . $src . '");';
 $_SESSION["correct"] = $countries[$correct]['name'];
 
