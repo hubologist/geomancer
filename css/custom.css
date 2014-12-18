@@ -9,6 +9,10 @@ body {
     /* http://fc09.deviantart.net/fs12/i/2006/277/a/f/Worldmap_by_PhysicalMagic.jpg */
 }
 
+form {
+    margin-top: 20px;
+}
+
 .alert {
     margin-top: 20px;
 }
@@ -19,10 +23,18 @@ body {
     height: 300px;
     max-width: 450px;
     margin: 0 auto;
-    margin-bottom: 20px;
 }
 
-.navbar, .navbar-default, .progress, .row, .col-xs-4, .col-xs-1 {
+.flag-container {
+    background: rgba(0,0,0,0.8);
+    max-height: 300px;
+}
+
+.separator {
+    margin-top: 20px;
+}
+
+.navbar, .navbar-default, .progress, .row, .col-xs-10, .col-xs-4, .col-xs-1 {
     padding: 0;
     margin: 0;
     border: 0;

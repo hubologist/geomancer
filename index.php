@@ -82,9 +82,16 @@ include 'php/settings.php'; //game settings
         </div>
 
         <div class="container">
-            <div class="alert alert-danger" role="alert">
-                <p>WRONG!</p>
+            <div class="row">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-10">
+                    <div class="alert alert-info" role="alert">
+                        <p>WELCOME! Try to guess the flag! Quickly now!</p>
+                    </div>
+                </div>
+                <div class="col-xs-1"></div>
             </div>
+
             <div class="row">
                 <?php include 'php/game.php'; ?>
             </div>       
