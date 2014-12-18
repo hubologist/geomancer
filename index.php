@@ -61,7 +61,7 @@ include 'php/settings.php'; //game settings
                                 <li><a href="index.php?difficulty=hard">Hard</a></li>
                             </ul>
                         </li>
-                        <li><a href="index.php?reset=true">Reset Score</a></li>
+                        <li><a href="index.php?reset=true">Restart</a></li>
                         <li><a href="http://lightradius.com">lightradius 2014</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -70,6 +70,11 @@ include 'php/settings.php'; //game settings
                 </div>
             </div>
         </nav>
+        <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="10" style="width: 80%;" id="bar">
+                <span class="sr-only">0</span>
+            </div>
+        </div>
         <div class="progress">
             <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="10" style="width: 60%;" id="timer">
                 <span class="sr-only">0</span>
