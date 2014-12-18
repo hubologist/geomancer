@@ -20,10 +20,10 @@ include 'php/settings.php'; //game settings
         <meta name="description" content="Flag quiz game">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="keywords" content="Free, Game, Geography, Flags, Multiple-choice">
-        
+
         <!-- title -->
         <title>Geomancer</title>
-        
+
         <!-- bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -76,11 +76,15 @@ include 'php/settings.php'; //game settings
             </div>
         </div>
         <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="10" style="width: 60%;" id="timer">
+            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="10" style="width: 60%;" id="timer">
                 <span class="sr-only">0</span>
             </div>
         </div>
+
         <div class="container">
+            <div class="alert alert-danger" role="alert">
+                <p>WRONG!</p>
+            </div>
             <div class="row">
                 <?php include 'php/game.php'; ?>
             </div>       
