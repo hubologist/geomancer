@@ -70,14 +70,20 @@ include 'php/settings.php'; //game settings
                 </div>
             </div>
         </nav>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="10" style="width: 60%;" id="timer">
+                <span class="sr-only">0</span>
+            </div>
+        </div>
         <div class="container">
             <div class="row">
                 <?php include 'php/game.php'; ?>
-            </div>
+            </div>       
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>
