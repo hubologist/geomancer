@@ -61,10 +61,11 @@ foreach ($options as $id) {
     if ($i % 2 !== 0) {
         echo "<div class='row'>";
     }
-    echo "<div class='col-xs-6'><input class='btn btn-default' type='submit' name='submit' value='" . $countries[$id]['name'] . "'/></div>";
+    echo "<div class='col-xs-1'></div><div class='col-xs-4'><input class='btn btn-default' type='submit' name='submit' value='" . $countries[$id]['name'] . "'/></div><div class='col-xs-1'></div>";
     if ($i % 2 !== 0) {
         echo "</div>";
     }
+    echo "<div class='separator'>";
     $i++;
 }
 
