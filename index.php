@@ -85,9 +85,7 @@ include 'php/settings.php'; //game settings
             <div class="row">
                 <div class="col-xs-1"></div>
                 <div class="col-xs-10">
-                    <div class="alert alert-info" role="alert">
-                        <p>WELCOME! Try to guess the flag! Quickly now!</p>
-                    </div>
+                    <?php include 'php/showalert.php' ?>
                 </div>
                 <div class="col-xs-1"></div>
             </div>
