@@ -1,6 +1,17 @@
-Geomancer
+<h1>Geomancer</h1>
+<h2>Tiny mobile-first quiz game that uses PHP</h2>
 
-Geomancer is intended to be an extremely simple quiz web application built in PHP.
+<h3>Basic Features</h3>
 
-Future features:
+<p>Timed quiz.</p>
+<p>Score depends on your answering speed.</p>
+<p>Maximum number of questions should not exceed maximum number of countries/flags to avoid repetition.</p>
+<p></p>
+<p>Clean Bootstrap design.</p>
 
+<h3>Augmented product</h3>
+
+<p>Possibility to choose between flags, capitals or random questions.</p>
+<p>Improved animations.</p>
+<p>Sounds?</p>
+<p>Keep best score?</p>
