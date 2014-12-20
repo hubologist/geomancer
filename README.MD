@@ -6,7 +6,7 @@
 <p>Timed quiz.</p>
 <p>Score depends on your answering speed.</p>
 <p>Maximum number of questions should not exceed maximum number of countries/flags to avoid repetition.</p>
-<p></p>
+<p>Help buttons, "Who wants to be a millionaire" style.</p>
 <p>Clean Bootstrap design.</p>
 
 <h3>Augmented product</h3>
