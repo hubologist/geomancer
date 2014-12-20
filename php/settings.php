@@ -78,3 +78,34 @@ function getFlags() {
     }
     return $flags;
 }
+
+$flags = getFlags();
+
+//pulling all countries for which we have flags from our database
+for ($i = 0; $i < count($flags); $i++) {
+    $sql = "SELECT iso, name, capital, area, pop, continent, neighbours FROM countries WHERE capital IS NOT NULL AND iso = '" . $flags[$i] . "'";
+    $result = $db->query($sql);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $countries[$i] = $row;
+    } else {
+        echo "<br />No results for " . $flags[$i];
+    }
+}
+
+$db->close();
+
+/*
+ * 3.0 globals and helper functions
+ */
+
+//randomizing our list of countries
+shuffle($countries);
+
+//number of selected countries
+$total = count($countries);
+
+if(!isset($_SESSION["countries"])) {
+    $_SESSION["countries"] = $total;    
+}

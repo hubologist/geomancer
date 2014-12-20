@@ -70,11 +70,7 @@ include 'php/settings.php'; //game settings
                 </div>
             </div>
         </nav>
-        <div class="progress">
-            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="10" style="width: 80%;" id="bar">
-                <span class="sr-only">0</span>
-            </div>
-        </div>
+        <?php include 'php/progressbar.php'?>
         <div class="progress">
             <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="10" style="width: 60%;" id="timer">
                 <span class="sr-only">0</span>
