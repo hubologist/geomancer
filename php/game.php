@@ -18,6 +18,12 @@
  * 2.0 SQL
  */
 
+//this pulls out a predefined quantity of country ids at random, to serve as our multiple choice options
+function getOptions($min, $max, $quantity) {
+    $numbers = range($min, $max);
+    shuffle($numbers);
+    return array_slice($numbers, 0, $quantity);
+}
 
 $options = getOptions(0, $total - 1, $difficulty);
 $correct = $options[mt_rand(0, $difficulty - 1)];

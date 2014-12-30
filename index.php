@@ -6,8 +6,8 @@ contact: hi@lightradius.com
 -->
 
 <?php
-session_start();
 require_once 'php/connect.php';  //database connection
+require_once 'php/init.php';  //initialization file
 include 'php/settings.php'; //game settings
 ?>
 
