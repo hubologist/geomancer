@@ -5,6 +5,10 @@
  * contact: hi@lightradius.com
  */
 
+/*
+ * Simple php database connection and session start
+ */
+
 $servername = "localhost";
 $username = "root";
 $password = "";
