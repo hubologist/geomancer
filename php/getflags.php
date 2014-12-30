@@ -18,11 +18,11 @@ function getFlags() {
     $i = 0;
     foreach (glob("./flag/*.*") as $filename) {
         if (substr($filename, -3) === "png") {
-            $flags[$i] = substr($filename, -6, 2);
+            $array[$i] = substr($filename, -6, 2);
             $i++;
         }
     }
-    return $flags;
+    return $array;
 }
 
 $flags = getFlags();
