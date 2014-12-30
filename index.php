@@ -12,7 +12,6 @@ contact: hi@lightradius.com
  */
 
 require_once 'php/connect.php';  //database connection
-require_once 'php/check_flags.php';  //stores flag image names in an array
 require_once 'php/query.php';  //makes the database query according to the available flags
 
 /*
