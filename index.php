@@ -22,7 +22,7 @@ include 'php/settings.php'; //game settings
         <meta name="keywords" content="Free, Game, Geography, Flags, Multiple-choice">
 
         <!-- title -->
-        <title>Geomancer</title>
+        <title>Geomancer | Geography Quiz</title>
 
         <!-- bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
