@@ -12,18 +12,14 @@
  */
 
 //returns an array with the names of all available flag images (.png type files) in our flag folder
-function getFlags() {
-    $i = 0;
-    foreach (glob("./flag/*.*") as $filename) {
-        if (substr($filename, -3) === "png") {
-            $array[$i] = substr($filename, -6, 2);
-            $i++;
-        }
-    }
-    return $array;
-}
 
-$flags = getFlags();
+$i = 0;
+foreach (glob("./flag/*.*") as $filename) {
+    if (substr($filename, -3) === "png") {
+        $flags[$i] = substr($filename, -6, 2);
+        $i++;
+    }
+}
 
 //pulling all countries for which we have flags from our database, to ensure that we will always have a flag to display
 for ($i = 0; $i < count($flags); $i++) {
